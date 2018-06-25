@@ -1,0 +1,22 @@
+
+<div class="form-group">
+  <label> form input</label>
+  <input [(ngModel)]="servername">
+  <button class="btn btn-primanry" [disabled]="servercreated" (click)="oncreateserver()">add server</button>
+ <label>checking  </label>
+       <input type="text" class="form-control" (input)="onupdateserver($event)">
+  <p *ngIf="servercreated; else noserver"> server was created and the name is {{ servername }}</p><br><br>
+  <ng-template #noserver>
+    <p [ngStyle]="{backgroundColor: 'red'}">no server created</p>
+  </ng-template>
+  <!--checking the event in console -->
+ <label>Input Time</label>
+       <input [(ngModel)]="time" placeholder="input sec" >
+  <button class="btn btn-success" (click)="settime()">Input</button>
+  <button [disabled]="!allowButton">Enable BUTTON</button>
+
+  <P [innerText]="allowButton"></P>
+  <!--property and string interpolation or as {{ allowButton}}-->
+
+</div>
+

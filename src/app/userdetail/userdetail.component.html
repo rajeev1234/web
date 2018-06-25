@@ -1,0 +1,17 @@
+<h2>
+  Hey {{ account.username }}
+</h2>
+
+<button  (click)="logoutClicked()"  id="logoutBtn">Logout</button><br>
+<br>
+<br>
+
+<h3>User Forms</h3>
+<input [(ngModel)]="registrations.email" placeholder="Email"><br><br>
+<input type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)">
+<br>
+<br>
+
+    <button (click)="uploadFileToActivity1();uploadFileToActivity()">Save</button>

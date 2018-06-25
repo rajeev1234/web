@@ -1,0 +1,21 @@
+<p>
+  Welcome {{ account.username }}
+</p>
+
+<button  (click)="logoutClicked()"  id="logoutBtn">Logout</button><br>
+
+<!--<div class="container">-->
+  <h2>Movies:</h2>
+  <div *ngFor="let movie of movies;" >
+    <h4>{{movie.title}}</h4>
+  </div>
+<!--</div>-->
+  <button  (click)="addMovieClicked()">Add New</button>
+<!--<div class="container">-->
+    <!--<div *ngIf="selectedMovie && !isAddEditMode">-->
+        <!--<h2>Details:</h2>-->
+        <!--<h4>{{selectedMovie.title}}</h4>-->
+        <!--<p>{{selectedMovie.description}}</p>-->
+    <!--</div>-->
+<!--</div>-->
+
