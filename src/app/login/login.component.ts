@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   userLogin: FormGroup;
   loading: boolean;
   tokenstore: string;
+  mytoken: string;
 
 
   constructor(private fb: FormBuilder,
@@ -30,9 +31,9 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.loading = false;
+    // this.loading = false;
 
-    // localStorage.clear();
+    localStorage.clear();
     // if ( localStorage.getItem('token') && localStorage.getItem('account')) {
     //   this.global.me = JSON.parse(localStorage.getItem('account'));
     //   this.router.navigate(['/home']);
@@ -57,6 +58,8 @@ export class LoginComponent implements OnInit {
     );
     }
     token() {
-    localStorage.getItem('Token');
+    this.mytoken = localStorage.getItem('Token');
+    // console.log(mytoken);
+    // this.mytoken;
     }
 }

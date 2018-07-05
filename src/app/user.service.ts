@@ -4,9 +4,17 @@ import { Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class UserService {
-  httpHeaders = new HttpHeaders({'content-type': 'application/json ; charset=utf-8'});
 
-  constructor(private http: HttpClient) { }
+
+
+  constructor(private http: HttpClient) {
+     // const httpHeaders = new HttpHeaders({'content-type': 'application/json ; charset=utf-8'});
+     // const mytoken = localStorage.getItem('Token');
+     // const header = httpHeaders.append('Token', mytoken);
+     // // console.log(mytoken);
+     // console.log('userservice works');
+     // console.log(header);
+  }
   lol(userData): Observable<any> {
     return this.http.post('http://127.0.0.1:8000/test/', userData);
   }
@@ -19,9 +27,7 @@ export class UserService {
     return this.http.post('http://127.0.0.1:8000/userdetail/', formData);
 }
   postdetail(userData): Observable<any> {
-    // const formData: FormData = new FormData();
-    // formData.append('file', fileToUpload);
-    return this.http.post('http://127.0.0.1:8000/userdetails/', userData, this.getAuthHeaders());
+    return this.http.post('http://127.0.0.1:8000/userdetails/', userData, this.getAuthHeaders() );
 }
   loginUser(userData: any): Observable<any> {
     // return this.http.post('http://127.0.0.1:8000/authenticate/', userData, {headers: this.httpHeaders});
@@ -39,10 +45,10 @@ export class UserService {
     return this.http.post('http://127.0.0.1:8000/rest-auth/password/reset/', userData);
   }
   password_reset_confirm(userData): Observable<any> {
-    return this.http.post('http://127.0.0.1:8000/rest-auth/password/reset/confirm/', userData);
+    return this.http.post('http://127.0.0.1:8000/rest-auth/password/reset/confirm/', userData, this.getAuthHeaders());
   }
   private getAuthHeaders() {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('Token');
     const httpHeaders = new HttpHeaders(
       {
         'Content-Type': 'application/json; charset=utf-8',

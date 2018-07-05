@@ -28,9 +28,9 @@ export class UserdetailComponent implements OnInit {
       email: '',
       // fileToUpload: File ,
     };
-       this.userSub = this.global.user.subscribe(
-      me => this.account = me
-    );
+    //    this.userSub = this.global.user.subscribe(
+    //   me => this.account = me
+    // );
     //  if ( localStorage.getItem('token') && localStorage.getItem('account')) {
     //   this.global.me = JSON.parse(localStorage.getItem('account'));
     // } else {

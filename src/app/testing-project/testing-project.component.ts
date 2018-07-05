@@ -21,19 +21,20 @@ export class TestingProjectComponent implements OnInit {
   ngOnInit() {
     this.testing_project = {
       title: '',
-      description: '',
+      description1: '',
     };
+        const token = localStorage.getItem('Token');
+    const token1 = token.replace(/['"]+/g, '');
+    console.log(token1);
+    // console.log(token);
   }
 
   test() {
+    // const headers = new HttpHeaders();
     this.testService.testing(this.testing_project).subscribe(
       responce => {
         console.log('responce' , responce);
-        // localStorage.setItem('username3', this.testing_project.username);
-        // this.global.me = responce['user'];
-        // console.log('token', responce['token']);
-        // console.log();
-        this.router.navigate(['/login']);
+        // this.router.navigate(['/login']);
       },
       error => console.log('error', error )
     );

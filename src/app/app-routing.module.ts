@@ -17,6 +17,8 @@ import {TestingProjectComponent} from './testing-project/testing-project.compone
 
 const routes: Routes = [
   // { path: '', component: AppComponent },
+
+  { path: 'testpost', component: TestingProjectComponent},
   { path: 'timer', component: TimerComponent },
   { path: 'start', component: StartComponent },
   { path: 'userdetail', component: UserdetailComponent},
